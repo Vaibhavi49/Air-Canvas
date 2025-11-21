@@ -1,37 +1,51 @@
-Air Canvas
+🎨 Air Canvas
 
-Draw in the air using hand gestures. This project uses OpenCV and fingertip tracking to let you choose colors, draw, and erase without touching the screen—your hand becomes the pen.
+A gesture-controlled drawing application where you draw in the air using just your hand. Built with OpenCV and fingertip detection, Air Canvas turns your camera feed into a virtual whiteboard that reacts to your movements in real time.
 
-Features
+🚀 Overview
 
-Real-time hand + fingertip detection
+Air Canvas tracks your hand through the webcam, identifies your index fingertip, and uses its coordinates to draw on the screen. With simple gestures, you can switch between colors, draw, erase, and even clear the screen—no physical stylus needed.
 
-Draw with multiple colors
+This project is perfect for learning computer vision, gesture recognition, and real-time image processing.
 
-Eraser mode
+✨ Features
 
-Smooth drawing experience
+🖐️ Hand Detection using OpenCV + MediaPipe
 
-Simple and beginner-friendly code
+📍 Fingertip Tracking for accurate drawing
 
-Tech Used
+🎨 Multiple Colors (Red, Blue, Green, etc.)
+
+🧽 Eraser Mode
+
+🖥️ Clean UI for color selection
+
+⚡ Real-Time Rendering
+
+👩‍💻 Beginner-friendly and fully customizable
+
+🧠 How It Works
+
+The webcam captures frames.
+
+MediaPipe detects hand landmarks.
+
+Index fingertip (landmark 8) is tracked.
+
+When the finger is up, lines are drawn between consecutive fingertip points.
+
+If fingertip overlaps with color boxes → color changes.
+
+If fingertip enters eraser zone → it erases drawn strokes.
+
+A mask layer is used to ensure smooth drawing without flickering.
+
+🛠️ Tech Stack
 
 Python
 
 OpenCV
 
-MediaPipe (or custom detection)
+MediaPipe
 
-How It Works
-
-The camera tracks your hand, detects your index fingertip, and maps its movement onto the screen. Gestures control drawing, color selection, and erasing.
-
-Setup
-pip install opencv-python mediapipe numpy
-
-Run
-python air_canvas.py
-
-Use Cases
-
-Virtual whiteboard, gesture-based UI, computer vision learning.
+NumPy
